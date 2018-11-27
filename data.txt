@@ -1,0 +1,20 @@
+Linux 4.17.19-200.fc28.x86_64 (localhost.localdomain) 	27/11/18 	_x86_64_	(2 CPU)
+
+13:01:25     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+13:01:25     all   13.02    0.34    7.53    0.24    2.50    2.76    0.00    0.00    0.00   73.61
+Linux 4.17.19-200.fc28.x86_64 (localhost.localdomain) 	27/11/18 	_x86_64_	(2 CPU)
+
+13:01:27     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+13:01:27     all   13.03    0.34    7.53    0.24    2.50    2.76    0.00    0.00    0.00   73.60
+Linux 4.17.19-200.fc28.x86_64 (localhost.localdomain) 	27/11/18 	_x86_64_	(2 CPU)
+
+13:01:30     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+13:01:30     all   13.04    0.34    7.54    0.24    2.50    2.76    0.00    0.00    0.00   73.58
+Linux 4.17.19-200.fc28.x86_64 (localhost.localdomain) 	27/11/18 	_x86_64_	(2 CPU)
+
+13:01:34     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+13:01:34     all   13.07    0.34    7.55    0.24    2.50    2.76    0.00    0.00    0.00   73.54
+Linux 4.17.19-200.fc28.x86_64 (localhost.localdomain) 	27/11/18 	_x86_64_	(2 CPU)
+
+13:01:39     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+13:01:39     all   13.11    0.34    7.56    0.24    2.50    2.76    0.00    0.00    0.00   73.49
