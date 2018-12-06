@@ -42,8 +42,8 @@ do
 	# Appending mpstat data to data.txt file to be read at the end of each iteration.
 	mpstat >> data.txt
 
-	# Assigning the current byte count of results.dat to the variable c.
-	c=`cat results.dat | wc -c`
+	# Assigning the current word count of data.txt to the variable c.
+	c=`cat data.txt | wc -l`
 
 	# Appending the word count and iteration values to results.dat
 	# to be used as values for C0 and N columns respectively.
