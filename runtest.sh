@@ -39,8 +39,8 @@ do
 	# for 2 seconds each time to avoid finishing with duplicate values.
 	timeout 2 ./loadtest $m
 	
-	# Appending mpstat data to data.txt file to be read at the end of each iteration.
-	mpstat >> data.txt
+	# Appending mpstat 1 2 data to data.txt file to be read at the end of each iteration.
+	mpstat 1 2 >> data.txt
 
 	# Assigning the current word count of data.txt to the variable c.
 	c=`cat data.txt | wc -l`
