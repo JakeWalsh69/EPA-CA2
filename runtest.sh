@@ -19,15 +19,15 @@ elif [[ $1 -gt 50 ]]; then
    exit 1;
 fi
 
-# If a file called results.dat and/or data.txt exists, 
+# If a file called stats.dat and/or findings.txt exists, 
 # it will be removed each time the script is run.
-rm results.dat
-rm data.txt
+rm stats.dat
+rm findings.txt
 
-# Formatting the headers within the results.dat file.
-printf "C0\tN\tidle\n" >> results.dat
+# Formatting the headers within the stats.dat file.
+printf "C0\tN\tidle\n" >> stats.dat
 
-# Creating a variable c to keep track of the byte count within data.txt.
+# Creating a variable c to keep track of the word count within findings.txt.
 c=0
 # Creating a variable m to store the value entered by the user to be utilized in for loop.
 m=$1
@@ -35,32 +35,32 @@ m=$1
 # For loop to iterate through the loadtest $m times.
 for (( l=1; l<=$m; l++ ))
 do
-	# Timeout command is assigned value of 2 to iterate through the loadtests
-	# for 2 seconds each time to avoid finishing with duplicate values.
-	timeout 2 ./loadtest $m
+	# Timeout command is assigned value of 10 to iterate through the loadtests
+	# for 10 seconds each time to avoid finishing with duplicate values.
+	timeout 10 ./loadtest 10
 	
-	# Appending mpstat 1 2 data to data.txt file to be read at the end of each iteration.
-	mpstat 1 2 >> data.txt
+	# Appending mpstat data to findings.txt file to be read at the end of each iteration.
+	mpstat >> findings.txt
 
-	# Assigning the current word count of data.txt to the variable c.
-	c=`cat data.txt | wc -l`
+	# Assigning the current word count of synthetic.dat to the variable c.
+	c=`cat synthetic.dat | wc -l`
 
-	# Appending the word count and iteration values to results.dat
+	# Appending the word count and iteration values to stats.dat
 	# to be used as values for C0 and N columns respectively.
-	printf "$c\t$l" >> results.dat
+	printf "$c\t$l" >> stats.dat
 
 	# Appending an extra tab for formatting purposes.
-	printf "\t" >> results.dat
+	printf "\t" >> stats.dat
 	
-	# Using awk to obtain and print the 12th header of the data.txt file.
-	# This value (idle) will then be appended to results.dat at the end of the current line. 
-	awk '{print $12}' data.txt | tail -n1 >> results.dat
+	# Using awk to obtain and print the 12th header of the findings.txt file.
+	# This value (idle) will then be appended to stats.dat at the end of the current line. 
+	awk '{print $12}' findings.txt | tail -n1 >> stats.dat
 	
 	# This line is purely for the users benefit so that they know what is happening
 	# while the loadtest is running.
 	echo "Iteration $l of $m completed."
 done
 
-# Displaying all contents of the results.dat file after the loadtest has finished.
-printf "\nContents of results.dat\n"
-cat results.dat
+# Displaying all contents of the stats.dat file after the loadtest has finished.
+printf "\nContents of stats.dat\n"
+cat stats.dat
