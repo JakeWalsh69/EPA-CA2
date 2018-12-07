@@ -43,7 +43,7 @@ do
 	mpstat >> findings.txt
 
 	# Assigning the current word count of synthetic.dat to the variable c.
-	c=`cat synthetic.dat | wc -l`
+	let c+=`cat synthetic.dat | wc -l`
 
 	# Appending the word count and iteration values to stats.dat
 	# to be used as values for C0 and N columns respectively.
