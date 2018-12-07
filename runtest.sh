@@ -9,7 +9,7 @@ if [[ -z "$1" ]]; then
 fi
 
 # Check if value entered is greater than 0, if not program exits.
-if [[ "$1" -lt 0 ]]; then
+if [[ "$1" -lt 1 ]]; then
    echo "ERROR: Value must be greater than 0"
    exit 1;
 
